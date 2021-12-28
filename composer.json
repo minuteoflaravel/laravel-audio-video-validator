@@ -1,5 +1,5 @@
 {
-    "name": "minuteoflaravel/media-validator",
+    "name": "minuteoflaravel/laravel-audio-video-validator",
     "description": "Laravel validator for video and audio files",
     "keywords": [
         "laravel",
@@ -9,7 +9,7 @@
         "media",
         "media-validator"
     ],
-    "homepage": "https://github.com/minuteoflaravel/media-validator",
+    "homepage": "https://github.com/minuteoflaravel/laravel-audio-video-validator",
     "require": {
         "php": "^8.0",
         "illuminate/support": "^8.0",
