@@ -1,4 +1,4 @@
-# Audio and Video validators
+# Laravel Audio & Video Validator
 This package adds valdators for audio and video files to your Laravel project.
 
 ## Installation
@@ -10,7 +10,7 @@ To use this package you should intall ffmpeg multimedia framework:
 After that install the package via composer:
 
 ```bash
-composer require minuteoflaravel/media-validator
+composer require minuteoflaravel/laravel-audio-video-validator
 ```
 
 ## Validators
