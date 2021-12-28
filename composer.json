@@ -14,7 +14,9 @@
         "php": "^8.0",
         "illuminate/support": "^8.0",
         "pbmedia/laravel-ffmpeg": "^7.6",
-        "illuminate/validation": "^8.0"
+        "illuminate/validation": "^8.0",
+        "monolog/monolog": "^2.3.5",
+        "psr/log": "^2.0.0"
     },
     "license": "MIT",
     "type": "library",
