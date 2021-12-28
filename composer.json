@@ -12,11 +12,7 @@
     "homepage": "https://github.com/minuteoflaravel/laravel-audio-video-validator",
     "require": {
         "php": "^8.0",
-        "illuminate/support": "^8.0.0",
-        "pbmedia/laravel-ffmpeg": "^7.6.0",
-        "illuminate/validation": "^8.0.0",
-        "monolog/monolog": ">=1.3",
-        "psr/log": ">=1.0"
+        "pbmedia/laravel-ffmpeg": "^7.6.0"
     },
     "license": "MIT",
     "type": "library",
