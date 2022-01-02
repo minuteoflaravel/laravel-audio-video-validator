@@ -18,6 +18,7 @@ composer require minuteoflaravel/laravel-audio-video-validator
 Package adds these validators:
 - audio
 - video
+- codec
 - duration
 - duration_max
 - duration_min
@@ -35,6 +36,7 @@ If you need to add your custom translatable error messages then just add them as
 ```php
   'audio' => 'The :attribute must be a audio.',
   'video' => 'The :attribute must be a video.',
+  'codec' => 'The :attribute codec must be one of these: :codec',
   'duration' => 'The :attribute must be :duration seconds duration.',
   'duration_max' => 'The :attribute duration must be less than :duration_max seconds.',
   'duration_min' => 'The :attribute duration must be greater than :duration_min seconds.',
@@ -84,6 +86,22 @@ To check if file is video file and video dimensions greater than 1000x640:
 ```php
 $request->validate([
     'video' => 'video|video_min_width:1000|video_min_height:640',
+]);
+```
+
+To check if file is audio file and codec is mp3 or pcm_s16le(wav):
+
+```php
+$request->validate([
+    'audio' => 'audio|codec:mp3,pcm_s16le',
+]);
+```
+
+To check if file is video file and codec is h264(mp4):
+
+```php
+$request->validate([
+    'video' => 'video|codec:h264',
 ]);
 ```
 
