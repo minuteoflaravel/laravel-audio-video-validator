@@ -11,7 +11,7 @@
     ],
     "homepage": "https://github.com/minuteoflaravel/laravel-audio-video-validator",
     "require": {
-        "php": "^8.0",
+        "php": "^7.4|^8.0|^8.1",
         "pbmedia/laravel-ffmpeg": "^7.7.0"
     },
     "license": "MIT",
