@@ -34,6 +34,12 @@ class MediaValidator {
         );
 
         Validator::extend(
+            'codec',
+            'MinuteOfLaravel\MediaValidator\MediaValidator@validateCodec',
+            'The :attribute codec must be one of these: :codec',
+        );
+
+        Validator::extend(
             'duration',
             'MinuteOfLaravel\MediaValidator\MediaValidator@validateDuration',
             'The :attribute must be :duration seconds duration.'
@@ -89,6 +95,10 @@ class MediaValidator {
     }
 
     public static function replaceMessages() {
+        Validator::replacer('codec', function ($message, $attribute, $rule, $parameters) {
+            return str_replace(':' . $rule, implode($parameters), $message);
+        });
+
         Validator::replacer('duration', function ($message, $attribute, $rule, $parameters) {
             return str_replace(':' . $rule, $parameters[0], $message);
         });
@@ -134,6 +144,26 @@ class MediaValidator {
     public function validateVideo(string $attribute, $value): bool
     {
         return $this->isVideo($value);
+    }
+
+
+    public function validateCodec(string $attribute, $value, array $parameters): bool
+    {
+        $this->requireParameterCount(1, $parameters, 'codec');
+
+        if ($this->isAudio($value)) {
+            $codecName = $this->getAudioStream()->get('codec_name');
+
+            return in_array($codecName, $parameters);
+        }
+
+        if ($this->isVideo($value)) {
+            $codecName = $this->getVideoStream()->get('codec_name');
+
+            return in_array($codecName, $parameters);
+        }
+
+        return true;
     }
 
     public function validateDuration(string $attribute, $value, array $parameters): bool
