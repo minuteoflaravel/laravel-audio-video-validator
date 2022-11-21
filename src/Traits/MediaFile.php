@@ -30,7 +30,7 @@ trait MediaFile {
 
     private function isVideo($file)
     {
-        return $this->mediaHasAudio($file) && $this->mediaHasVideo($file);
+        return $this->mediaHasVideo($file);
     }
 
     private function mediaHasAudio($file) {
