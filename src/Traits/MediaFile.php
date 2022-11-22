@@ -13,6 +13,7 @@ trait MediaFile {
     private function createFFProbe() {
         $this->ffprobe = FFProbe::create([
             'ffprobe.binaries' => [
+                'C:/FFmpeg/bin/ffprobe.exe',
                 'ffprobe',
                 '/usr/bin/ffprobe',
                 '/usr/local/bin/ffprobe',
