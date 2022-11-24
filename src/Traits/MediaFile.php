@@ -13,6 +13,7 @@ trait MediaFile {
     private function createFFProbe() {
         $this->ffprobe = FFProbe::create([
             'ffprobe.binaries' => [
+                'C:/FFmpeg/bin/ffprobe.exe',
                 'ffprobe',
                 '/usr/bin/ffprobe',
                 '/usr/local/bin/ffprobe',
@@ -30,7 +31,7 @@ trait MediaFile {
 
     private function isVideo($file)
     {
-        return $this->mediaHasAudio($file) && $this->mediaHasVideo($file);
+        return $this->mediaHasVideo($file);
     }
 
     private function mediaHasAudio($file) {
