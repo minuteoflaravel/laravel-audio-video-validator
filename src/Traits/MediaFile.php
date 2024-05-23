@@ -25,11 +25,19 @@ trait MediaFile {
 
     private function isAudio($file)
     {
+        if (method_exists($file, 'getRealPath')) {
+            $file = $file->getRealPath();
+        }
+
         return $this->mediaHasAudio($file) && !$this->mediaHasVideo($file);
     }
 
     private function isVideo($file)
     {
+        if (method_exists($file, 'getRealPath')) {
+            $file = $file->getRealPath();
+        }
+
         return $this->mediaHasAudio($file) && $this->mediaHasVideo($file);
     }
 
